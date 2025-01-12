@@ -35,11 +35,15 @@ const displayAverageSalary = function(employeesArray) {
     }
     let totalSalary = 0;
     let averageSalary = 0;
+    let USD = Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
     for (let i = 0; i < employeesArray.length; i++) {
       totalSalary = totalSalary + employeesArray[i].salary;
     }
     averageSalary = totalSalary / employeesArray.length;
-    console.log(`The average employee salary between our ${employeesArray.length} employees is ${averageSalary.toFixed(2)}`);
+    console.log(`The average employee salary between our ${employeesArray.length} employees is ${USD.format(averageSalary)}`);
   }
 
 
