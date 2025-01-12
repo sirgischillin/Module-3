@@ -38,6 +38,7 @@ const displayAverageSalary = function(employeesArray) {
     let USD = Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
+      useGrouping: false,
     });
     for (let i = 0; i < employeesArray.length; i++) {
       totalSalary = totalSalary + employeesArray[i].salary;
