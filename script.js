@@ -8,9 +8,9 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   while (confirmQuery === true) {
     const employee = {
-      "firstName": "",
-      "lastName": "",
-      "salary": ""
+      firstName: "",
+      lastName: "",
+      salary: ""
     }
     employee.firstName = prompt('Please enter employee first name:');
     employee.lastName = prompt('Please enter employee last name:');
@@ -18,6 +18,7 @@ const collectEmployees = function() {
     if (isNaN(employee.salary) === true) {
       employee.salary = 0;
     }
+    employee.salary = Number(employee.salary);
     employeesArray.push(employee);
     confirmQuery = confirm('Would you like to add another employee?');
   }
@@ -35,10 +36,10 @@ const displayAverageSalary = function(employeesArray) {
     let totalSalary = 0;
     let averageSalary = 0;
     for (let i = 0; i < employeesArray.length; i++) {
-      totalSalary += employeesArray[i].salary;
+      totalSalary = totalSalary + employeesArray[i].salary;
     }
     averageSalary = totalSalary / employeesArray.length;
-    console.log(`The average employee salary between our ${employeesArray.length} is ${averageSalary}`)
+    console.log(`The average employee salary between our ${employeesArray.length} employees is ${averageSalary}`);
   }
 
 
